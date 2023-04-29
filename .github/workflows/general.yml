@@ -37,7 +37,10 @@ jobs:
   
   tarpaulin:
     runs-on: ubuntu-latest
+    container:
+      image: xd009642/tarpaulin
+      options: --security-opt seccomp=unconfined
     steps:
     - uses: actions/checkout@v3
     - name: Calculate code coverage
-      run: cargo tarpaulin --ignore-tests
+      run: cargo tarpaulin  --verbose --workspace
