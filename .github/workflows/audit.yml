@@ -1,6 +1,11 @@
 name: Audit
 
 on: 
+  workflow_dispatch:
+    inputs:
+      git-ref:
+        description: Git ref (optional)
+        required: false
   schedule:
     - cron: '0 0 * * *'
   push:

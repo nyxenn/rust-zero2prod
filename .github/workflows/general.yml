@@ -1,6 +1,13 @@
 name: General
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      git-ref:
+        description: Git ref (optional)
+        required: false
 
 env:
   CARGO_TERM_COLOR: always
